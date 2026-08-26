@@ -5,7 +5,7 @@ import NoteDetailPage from './pages/NoteDetailPage.jsx';
 
 export default function App() {
   return (
-    <div data-theme='forest'>
+    <div data-theme='light'>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/create' element={<CreatePage />} />
