@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db.js';
 import { notesRoutes } from './routes/notesRoutes.js';
-// import noteRoutes from './routes/noteRoutes.js';
+import { rateLimiter } from './middleware/rateLimiter.js';
 
 const PORT = process.env.PORT || 5001;
 
@@ -13,6 +13,7 @@ const app = express();
 // Initial middleware
 app.use(cors());
 app.use(express.json());
+app.use(rateLimiter);
 
 // Log req.path and req.method
 app.use((req, res, next) => {
